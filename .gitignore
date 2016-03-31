@@ -63,3 +63,6 @@ target/
 
 #Trash files
 *~
+
+#VS Studio
+.suo
