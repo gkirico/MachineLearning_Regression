@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{b2f77cc9-5fba-4a8b-97ff-f8b647da9585}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>MultipleLinearRegression_Assignment1.py</StartupFile>
+    <StartupFile>MultipleLinearRegression_Assignment2.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>

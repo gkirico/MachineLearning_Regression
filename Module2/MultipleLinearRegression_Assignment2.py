@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 def get_numpy_data(data_frame, features, output):
     data_frame['constant'] = 1 # add a constant column to the data frame
@@ -17,7 +17,7 @@ def predict_outcome(feature_matrix, weights):
     return(predictions)
 
 def feature_derivative(errors, feature):
-    derivative = 2*np.dot(errors, feature)
+    derivative = np.dot(errors, feature)
     return(derivative)
 
 def regression_gradient_descent(feature_matrix, output, initial_weights, step_size, tolerance):
@@ -54,22 +54,18 @@ initial_weights = np.array([-47000.,1.])
 step_size = 7e-12
 tolerance = 2.5e7
 
-
 simple_weights = regression_gradient_descent(feature_matrix, output, initial_weights, step_size, tolerance)
 
 print('sol',simple_weights)
 
-
 (test_feature_matrix, test_output) = get_numpy_data(test_data, ['sqft_living'], ['price'])
-
 
 test_predictions = predict_outcome(test_feature_matrix, simple_weights)
 
 print('test prediciton', test_predictions)
 
-
-errors = np.subtract(test_predictions, test_output)
-rss = np.dot(errors,errors) #fix it
+errors = np.subtract(test_predictions, test_output[:,0])
+rss = np.dot(errors,errors)
 
 print('rss', rss)
 
@@ -82,13 +78,13 @@ tolerance = 1e9
 
 weights = regression_gradient_descent(feature_matrix, output, initial_weights, step_size, tolerance)
 
+(test_feature_matrix, test_output) = get_numpy_data(test_data, ['sqft_living', 'sqft_living15'], ['price'])
 test_predictions = predict_outcome(test_feature_matrix, weights)
 
 print('test prediciton', test_predictions)
 
+errors = np.subtract(test_predictions, test_output[:,0])
+rss2 = np.dot(errors,errors)
 
-errors = np.subtract(test_predictions, np.transpose(test_output))
-rss = np.dot(errors,errors)
-
-print('rss', rss)
+print('rss', rss2)
 
