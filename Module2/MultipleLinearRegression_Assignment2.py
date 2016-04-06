@@ -17,7 +17,8 @@ def predict_outcome(feature_matrix, weights):
     return(predictions)
 
 def feature_derivative(errors, feature):
-    derivative = np.dot(errors, feature)
+    derivative = 2*np.dot(errors, feature)
+    derivative /= np.size(errors)
     return(derivative)
 
 def regression_gradient_descent(feature_matrix, output, initial_weights, step_size, tolerance):
@@ -71,12 +72,14 @@ print('rss', rss)
 
 model_features = ['sqft_living', 'sqft_living15']
 my_output = ['price']
-(feature_matrix, output) = get_numpy_data(train_data, model_features,my_output)
+(feature_matrix, output) = get_numpy_data(train_data, model_features, my_output)
 initial_weights = np.array([-100000., 1., 1.])
 step_size = 4e-12
 tolerance = 1e9
 
 weights = regression_gradient_descent(feature_matrix, output, initial_weights, step_size, tolerance)
+
+print('sol2', weights)
 
 (test_feature_matrix, test_output) = get_numpy_data(test_data, ['sqft_living', 'sqft_living15'], ['price'])
 test_predictions = predict_outcome(test_feature_matrix, weights)
