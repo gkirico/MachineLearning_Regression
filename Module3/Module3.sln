@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Module3", "Module3.pyproj", "{DD4270B9-A5DB-4024-995E-5C42497C5201}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Module4", "..\Module4\Module4.pyproj", "{6508645E-7681-43D3-8062-66C6726C2E43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD4270B9-A5DB-4024-995E-5C42497C5201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD4270B9-A5DB-4024-995E-5C42497C5201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6508645E-7681-43D3-8062-66C6726C2E43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6508645E-7681-43D3-8062-66C6726C2E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
